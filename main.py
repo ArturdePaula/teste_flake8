@@ -8,22 +8,25 @@ fila_teste2 = FilaPrioritaria()
 
 
 # Atualizando as filas 3 vezes cada uma
-fila_teste1.atualizafila()
-fila_teste1.atualizafila()
-fila_teste1.atualizafila()
+fila_teste1.atualiza_fila()
+fila_teste1.atualiza_fila()
+fila_teste1.atualiza_fila()
 
 fila_teste2.atualiza_fila()
 fila_teste2.atualiza_fila()
 fila_teste2.atualiza_fila()
 
 # Chamando os clientes de ambas as filas 3 vezes intercalando nos mesmos caixas
-print(fila_teste1.chamaCliente(10))
+print(fila_teste1.chama_cliente(10))
+
 print(fila_teste2.chama_cliente(10))
 
-print(fila_teste1.chamaCliente(11))
+print(fila_teste1.chama_cliente(11))
+
 print(fila_teste2.chama_cliente(11))
 
-print(fila_teste1.chamaCliente(12))
+print(fila_teste1.chama_cliente(12))
+
 print(fila_teste2.chama_cliente(12))
 
 print(

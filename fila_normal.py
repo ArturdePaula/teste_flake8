@@ -1,42 +1,27 @@
-class filanormal:
-    codigo:int = 0
-    fila:list = []
-    clientesatendidos:list= []
-    senhatual:str = " "
+from fila_base import FilaBase
 
-    def gerasenhaatual(self) -> None:
 
-        """Metodo/Função que gera a senha atua, concatenanto o prefixo NM com o 
-        codigo da posição na fila"""
+class filanormal(FilaBase):
+    
+    def gera_senha_atual(self) -> None:
+        """Metodo/Função que gera a senha atua, concatenanto o
+        prefixo NM com o codigo da posição na fila"""
 
-        self.senhatual = f"NM {self.codigo}"
+        self.senha_atual = f"NM{self.codigo}"
 
-    def resetafila(self) -> None:
+    def atualiza_fila(self) -> None:
+        """Metodo/Função para quando um clinte requisita uma senha,
+        aumentando o codigo da fila, gerando sua senha e colocando o mesmo na fila"""
 
-        """Metodo/função que reseta a fila para começar do 0 novamente se o 
-        codigo ( posição na fila ) já for de 100, caso contrario soma + 1 na 
-        codigo da fila"""
+        self.reseta_fila()
+        self.gera_senha_atual()
+        self.fila.append(self.senha_atual)
 
-        if self.codigo == 100:
-            self.codigo = 0
-        else:
-            self.codigo += 1
-
-    def atualizafila(self) -> None:
-
-        """Metodo/Função para quando um clinte requisita uma senha, aumentando 
-        o codigo da fila, gerando sua senha e colocando o mesmo na fila"""
-        
-        self.resetafila()
-        self.gerasenhaatual()
-        self.fila.append(self.senhatual)
-
-    def chamaCliente(self, caixa: int) -> str:
-        
-        """Metodo/Função que retorna uma String informando o codigo do primeiro 
+    def chama_cliente(self, caixa: int) -> str:
+        """Metodo/Função que retorna uma String informando o codigo do primeiro
         cliente e o numero do caixa que esta chamando para atendimento. Após isso
         a senha do cliente atendido e colocada na lista de clientes atendidos"""
 
         cliente_atual = self.fila.pop(0)
-        self.clientesatendidos.append(cliente_atual)
+        self.clientes_atendidos.append(cliente_atual)
         return f"Cliente de codigo { cliente_atual }, dirija-se ao caixa {caixa}"
