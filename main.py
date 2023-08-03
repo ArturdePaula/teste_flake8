@@ -27,5 +27,5 @@ print(fila_teste1.chamaCliente(12))
 print(fila_teste2.chama_cliente(12))
 
 print(
-    f'As estatisticas dos clintes da fila prioritarias foram as seguintes: {fila_teste2.estatistica (5, 219, "not_detail" )}'
+    f'As estatisticas dos clintes da fila prioritarias foram as seguintes: {fila_teste2.estatistica ("10/5/2032", 219, "detail" )}'
 )
