@@ -1,12 +1,14 @@
 from fila_base import FilaBase
 
+from valores_constantes import CODIGO_FILA_NORMAL
+
 
 class filanormal(FilaBase):
     def gera_senha_atual(self) -> None:
         """Metodo/Função que gera a senha atua, concatenanto o
         prefixo NM com o codigo da posição na fila"""
 
-        self.senha_atual = f"NM{self.codigo}"
+        self.senha_atual = f"{CODIGO_FILA_NORMAL}{self.codigo}"
 
     def chama_cliente(self, caixa: int) -> str:
         """Metodo/Função que retorna uma String informando o codigo do primeiro

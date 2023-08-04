@@ -1,5 +1,6 @@
 import abc
 
+from valores_constantes import TAMANHO_MAXIMO_FILA, TAMANHO_MINIMO_FILA
 
 class FilaBase(metaclass=abc.ABCMeta):
     codigo: int = 0
@@ -12,8 +13,8 @@ class FilaBase(metaclass=abc.ABCMeta):
         novamente se o codigo ( posição na fila ) já for de 100,
         caso contrario soma + 1 no codigo da fila"""
 
-        if self.codigo == 200:
-            self.codigo = 0
+        if self.codigo == TAMANHO_MAXIMO_FILA:
+            self.codigo = TAMANHO_MINIMO_FILA
         else:
             self.codigo += 1
 

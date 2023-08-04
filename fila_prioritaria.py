@@ -1,5 +1,6 @@
-# Esta classe já foi feita usando PEP8
 from fila_base import FilaBase
+
+from valores_constantes import CODIGO_FILA_PRIORITARIA
 
 
 class FilaPrioritaria(FilaBase):
@@ -7,7 +8,7 @@ class FilaPrioritaria(FilaBase):
         """Metodo/Função que gera a senha atua, concatenanto o
         prefixo NM com o codigo da posição na fila"""
 
-        self.senha_atual = f"PR{self.codigo}"
+        self.senha_atual = f"{CODIGO_FILA_PRIORITARIA}{self.codigo}"
 
     def chama_cliente(self, caixa: int) -> str:
         """Metodo/Função que retorna uma String informando o codigo do primeiro
