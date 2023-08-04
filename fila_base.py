@@ -1,7 +1,7 @@
 import abc
 
+
 class FilaBase(metaclass=abc.ABCMeta):
-    
     codigo: int = 0
     fila: list = []
     clientes_atendidos: list = []
@@ -16,14 +16,21 @@ class FilaBase(metaclass=abc.ABCMeta):
         else:
             self.codigo += 1
 
-    @abc.abstractmethod
-    def gera_senha_atual(self): 
-        ...
+    def inseri_cliente(self):
+        """Metodo/função que inseri a senha do cliente na fila para ser atendido"""
+        self.fila.append(self.senha_atual)
 
     @abc.abstractmethod
-    def atualiza_fila(self):
+    def gera_senha_atual(self):
         ...
-    
+
+    def atualiza_fila(self):
+        """Metodo/função template que chama o metodo reseta_fila, gera_senha_atual e inseri_cliente,
+        ou seja, quando um novo cliente requisita uma senha, """
+        self.reseta_fila()
+        self.gera_senha_atual()
+        self.inseri_cliente()
+
     @abc.abstractmethod
-    def chama_cliente (self, caixa:int): 
+    def chama_cliente(self, caixa: int):
         ...

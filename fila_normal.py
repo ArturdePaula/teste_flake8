@@ -2,20 +2,11 @@ from fila_base import FilaBase
 
 
 class filanormal(FilaBase):
-    
     def gera_senha_atual(self) -> None:
         """Metodo/Função que gera a senha atua, concatenanto o
         prefixo NM com o codigo da posição na fila"""
 
         self.senha_atual = f"NM{self.codigo}"
-
-    def atualiza_fila(self) -> None:
-        """Metodo/Função para quando um clinte requisita uma senha,
-        aumentando o codigo da fila, gerando sua senha e colocando o mesmo na fila"""
-
-        self.reseta_fila()
-        self.gera_senha_atual()
-        self.fila.append(self.senha_atual)
 
     def chama_cliente(self, caixa: int) -> str:
         """Metodo/Função que retorna uma String informando o codigo do primeiro
