@@ -1,11 +1,9 @@
-# Importando as duas filas de seus determinados documentos
-from fila_normal import filanormal
-from fila_prioritaria import FilaPrioritaria
+# Importando a fabrica de filas e seu metodo para gerar o objeto da fila desejada
+from fabrica_fila import Fabricafila
 
 # Criando objetos das duas filas existentes
-fila_teste1 = filanormal()
-fila_teste2 = FilaPrioritaria()
-
+fila_teste1 = Fabricafila.pega_fila("normal")
+fila_teste2 = Fabricafila.pega_fila("prioritaria")
 
 # Atualizando as filas 3 vezes cada uma
 fila_teste1.atualiza_fila()
