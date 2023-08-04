@@ -10,8 +10,9 @@ class filanormal(FilaBase):
 
     def chama_cliente(self, caixa: int) -> str:
         """Metodo/Função que retorna uma String informando o codigo do primeiro
-        cliente e o numero do caixa que esta chamando para atendimento. Após isso
-        a senha do cliente atendido e colocada na lista de clientes atendidos"""
+        cliente e o numero do caixa que esta chamando para atendimento.
+        Após isso a senha do cliente atendido e colocada na lista de
+        clientes atendidos"""
 
         cliente_atual = self.fila.pop(0)
         self.clientes_atendidos.append(cliente_atual)

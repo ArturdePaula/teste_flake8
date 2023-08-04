@@ -19,9 +19,11 @@ class FilaPrioritaria(FilaBase):
         return f"Cliente de codigo { cliente_atual }, dirija-se ao caixa {caixa}"
 
     def estatistica(self, dia: str, agencia: int, flag: str) -> dict:
-        """Metodo/Função que recebe uma data, a agência, e uma flag para determinar qual o
-        tipo de estatistica que deve ser retornado. Caso a flag seja 'detail' o retorno será detalhado
-        caso contrario o retorno será um dicionario com a quantidade de clientes atendidos por agencia e dia
+        """Metodo/Função que recebe uma data, a agência,
+        e uma flag para determinar qual o tipo de estatistica que
+        deve ser retornado. Caso a flag seja 'detail' o retorno será
+        detalhado caso contrario o retorno será um dicionario com a
+        quantidade de clientes atendidos por agencia e dia
         """
 
         if flag != "detail":
